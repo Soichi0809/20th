@@ -1,0 +1,19 @@
+/* 全体のスタイル */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* ボタンのスタイル */
+#myButton {
+    padding: 10px 20px;
+    background-color: red;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
