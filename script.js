@@ -1,5 +1,7 @@
 alert("パスワードは問題番号")
 
+const api_url = "https://script.google.com/macros/s/AKfycbyZm6vfgq3efsdyGeNQEj-0QM4x9qdSdsmJdlcH6OX-rl_PMu_KqfyzLK5hG9Ojfr24/exec";
+
 var answer = ["1", "2", "3", "4", "5", "6", "7"];
 
 // モーダル要素を取得
@@ -58,10 +60,28 @@ submitBtn.onclick = function() {
         menubox[now_index].classList.remove("menu-box");
         answered[now_index] = 1;
         if(answered[0] == 1 && answered[1] == 1 && answered[2] == 1) {
-            lastbtn.classList.remove("graybutton");
             lastbtn.disabled = false;
         }
     }
     modal.style.display = "none"; // パスワードを入力した後、モーダルを閉じます
     document.getElementById("passwordInput").value = ""; // 入力欄をリセット
+}
+
+lastbtn.onclick = function() {
+    fetch(api_url, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: encodeURI(`group_num=1`)
+    })
+        .then((response) => {
+            response.text().then((text) => {
+                alert(text);
+            });
+        })
+        .catch((error) => {
+            alert(error.message);
+        });
+    
 }
