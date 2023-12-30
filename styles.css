@@ -44,6 +44,20 @@ body {
     cursor: pointer;
 }
 
+#passwordInput {
+    width: 80%;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+#submitBtn {
+    padding: 10px;
+    font-size: 20px;
+}
+
 /* ボタンの基本スタイル */
 .button-default {
     padding: 10px;
