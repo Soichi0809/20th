@@ -3,6 +3,23 @@ var resetbtn = document.getElementById("reset");
 resetbtn.onclick = function() {
     localStorage.clear();
 }
+//仮のコード終わり
+
+var group_num;
+
+function getgroupnum(){
+    group_num = localStorage.getItem("group_num");
+    var url = location.href;
+    if(group_num == null){
+        group_num = url.split("=")[1];
+        if(group_num =="1" || group_num =="2" || group_num =="3"){
+            localStorage.setItem("group_num", group_num);
+        }else{
+            alert("URLが不正です。もう一度QRコードを読み取ってください。");
+        }
+    }
+    return group_num;
+}
 
 var answered = [0,0,0,0,0,0,0]
 
@@ -13,6 +30,7 @@ window.onload = function() {
         answered = oldanswered;
         update(answered);
     }
+    getgroupnum();
 }
 const api_url = "https://script.google.com/macros/s/AKfycbwwNAqCvrzX1hcq9QLoZeBkrWo3tgG72oPAG8K1zdUDL6VE_mQCtZgNuKjNW107tEdi/exec";
 
@@ -123,7 +141,7 @@ lastbtn.onclick = function() {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: encodeURI(`group_num=1`)
+        body: encodeURI(`group_num=${getgroupnum()}`)
     })
         .then((response) => {
             response.text().then((text) => {
