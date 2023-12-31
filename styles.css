@@ -21,6 +21,10 @@ button {
     background-color: #d0d0d0;
 }
 
+button:active {
+    background-color: #b0b0b0;
+}
+
 /* モーダルウィンドウの基本スタイル */
 .modal {
     visibility: hidden;
@@ -95,6 +99,10 @@ button {
 .button-default {
     background-color: #f94a4ae2;
     color: white;
+}
+
+.button-default:active {
+    background-color: #f94a4a;
 }
 
 /* パスワードが正しい場合のボタンスタイル */
