@@ -6,32 +6,52 @@
 <body>
 
 <div class="wrap"> 
-  <div class="menu-box">
+  <div class="menu-box menu-box-default">
     <div class="qnum">問題1</div>
-    <button class="button-default openModal">解答する</button>
+    <div class="button-box">
+      <button class="button-default openAnswer">解答する</button>
+      <button class="openStory" disabled>ストーリー</button>
+    </div>
   </div>
-  <div class="menu-box">
+  <div class="menu-box menu-box-default">
     <div class="qnum">問題2</div>
-    <button class="button-default openModal">解答する</button>
+    <div class="button-box">
+      <button class="button-default openAnswer">解答する</button>
+      <button class="openStory" disabled>ストーリー</button>
+    </div>
   </div>
-  <div class="menu-box">
+  <div class="menu-box menu-box-default">
     <div class="qnum">問題3</div>
-    <button class="button-default openModal">解答する</button>
+    <div class="button-box">
+      <button class="button-default openAnswer">解答する</button>
+      <button class="openStory" disabled>ストーリー</button>
+    </div>
   </div>
-  <div class="menu-box" style="margin-top: 100px;">
+  <div class="menu-box menu-box-default" style="margin-top: 100px;">
     <div class="qnum">最終</div>
     <button id="lastbutton" class="graybutton" disabled>解答する</button>
+  </div>
+  <div class="menu-box menu-box-default" style="margin-top: 100px;">
+    <div class="qnum">リセット</div>
+    <button id="reset">リセット</button>
   </div>
 </div>
 
 
 
 <div id="myModal" class="modal">
+  <span class="close">&times;</span>
   <div class="modal-content">
-      <span class="close">&times;</span>
-      <p style="font-size: 25px;">パスワードを入力してください:</p>
+      <p style="font-size: 50px;">謎解きの答えは...</p>
       <input type="text" id="passwordInput">
-      <button id="submitBtn">入力</button> <!-- ここにボタンを追加 -->
+      <button id="submitBtn">解答</button>
+  </div>
+</div>
+
+<div id="storyModal" class="modal">
+  <span class="close">&times;</span>
+  <div class="modal-content">
+      <p id="storybox" style="font-size: 50px;"></p>
   </div>
 </div>
 
