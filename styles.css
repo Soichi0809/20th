@@ -5,6 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    user-select: none;
 }
 
 /* button要素のデフォルトを無効化 */
@@ -25,6 +26,10 @@ button:active {
     background-color: #b0b0b0;
 }
 
+button:disabled {
+    background-color: #d0d0d0;
+}
+
 /* モーダルウィンドウの基本スタイル */
 .modal {
     visibility: hidden;
@@ -37,7 +42,7 @@ button:active {
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
     opacity: 0; /* 最初は透明 */
-    transition: 0.2s all linear; /* アニメーション効果 */
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); /* アニメーション効果 */
     transform: translateY(-50px); /* 最初は少し上にずらす */
 }
 
@@ -105,10 +110,18 @@ button:active {
     background-color: #f94a4a;
 }
 
+.button-default:disabled {
+    background-color: #f94a4ae2;
+}
+
 /* パスワードが正しい場合のボタンスタイル */
 .button-correct {
     background-color: #008f0059;
     color: #008f00a8;
+}
+
+.button-correct:disabled {
+    background-color: #008f0059;
 }
 
 .menu-box-default {
@@ -131,7 +144,7 @@ button:active {
 
 .menu-box-correct {
     border: #008000 1.5px solid; /* 枠線の設定 */
-    background-color: #c6ffbb; /* 薄い緑色 */
+    background-color: #d2f2cb93; /* 薄い緑色 */
 }
 
 .wrap{
