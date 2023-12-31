@@ -112,6 +112,9 @@ submitBtn.onclick = function() {
     }
     modal.style.display = "none"; // パスワードを入力した後、モーダルを閉じます
     document.getElementById("passwordInput").value = ""; // 入力欄をリセット
+    storymodal.style.display = "block";
+    storymodal.scrollTop = 0;
+    document.getElementById("storybox").innerHTML = story[now_index];
 }
 
 function update(anss){
