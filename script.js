@@ -61,7 +61,7 @@ var menubox = document.querySelectorAll(".menu-box");
 ansbtns.forEach(function(btn, index) {
     // 各要素にクリックイベントリスナを追加
     btn.addEventListener('click', function() {
-        modal.style.display = "block";
+        modal.classList.add("show");
         now_index = index;
     });
 });
@@ -70,7 +70,7 @@ ansbtns.forEach(function(btn, index) {
 storybtns.forEach(function(btn, index) {
     // 各要素にクリックイベントリスナを追加
     btn.addEventListener('click', function() {
-        storymodal.style.display = "block";
+        storymodal.classList.add("show");
         storymodal.scrollTop = 0;
         now_index = index;
         document.getElementById("storybox").innerHTML = story[now_index];
@@ -80,41 +80,47 @@ storybtns.forEach(function(btn, index) {
 
 // ユーザーがxをクリックするとモーダルを閉じる
 span[0].onclick = function() {
-    modal.style.display = "none";
-    storymodal.style.display = "none";
+    modal.classList.remove("show");
+    storymodal.classList.remove("show");
+    correct_telling.style.display = "none";
     document.getElementById("passwordInput").value = ""; // 入力欄をリセット
 }
 span[1].onclick = function() {
-    modal.style.display = "none";
-    storymodal.style.display = "none";
+    modal.classList.remove("show");
+    storymodal.classList.remove("show");
+    correct_telling.style.display = "none";
     document.getElementById("passwordInput").value = ""; // 入力欄をリセット
 }
 
 // ユーザーがモーダル外をクリックすると閉じる
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+        modal.classList.remove("show");
         document.getElementById("passwordInput").value = ""; // 入力欄をリセット
     } else if (event.target == storymodal) {
-        storymodal.style.display = "none";
+        storymodal.classList.remove("show");
+        correct_telling.style.display = "none";
     }
 }
 
 //押されたボタンのインデックスを保存
 var now_index;
 
+var correct_telling = document.getElementById("correct_telling");
+
 // '入力'ボタンをクリックしたときのイベントリスナーを設定
 submitBtn.onclick = function() {
     var password = document.getElementById("passwordInput").value;
+    modal.classList.remove("show"); // パスワードを入力した後、モーダルを閉じます
     if(password == answer[now_index]) {
+        document.getElementById("storybox").innerHTML = story[now_index];
         answered[now_index] = 1;
         update(answered);
+        storymodal.classList.add("show");
+        correct_telling.style.display = "block";
+        storymodal.scrollTop = 0;
     }
-    modal.style.display = "none"; // パスワードを入力した後、モーダルを閉じます
     document.getElementById("passwordInput").value = ""; // 入力欄をリセット
-    storymodal.style.display = "block";
-    storymodal.scrollTop = 0;
-    document.getElementById("storybox").innerHTML = story[now_index];
 }
 
 function update(anss){
