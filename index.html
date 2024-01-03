@@ -2,66 +2,62 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
     <title>謎解き-ハタチの会</title>
 </head>
 <body>
 
 <div class="wrap"> 
   <div class="menu-box menu-box-default">
-    <div class="qnum">問題1</div>
-    <div class="button-box">
-      <button class="button-default openAnswer">解答する</button>
-      <button class="openStory" disabled>ストーリー</button>
+    <div class="qnum"><span class="ques">問題</span><span class="quesnum">1</span></div>
+    <div class="button-box button-box-before">
+      <div class="box-content">解答する</div>
+      <!-- <button class="openStory" disabled>ストーリー</button> -->
     </div>
   </div>
   <div class="menu-box menu-box-default">
-    <div class="qnum">問題2</div>
-    <div class="button-box">
-      <button class="button-default openAnswer">解答する</button>
-      <button class="openStory" disabled>ストーリー</button>
+    <div class="qnum"><span class="ques">問題</span><span class="quesnum">2</span></div>
+    <div class="button-box button-box-before">
+      <div class="box-content">解答する</div>
     </div>
   </div>
   <div class="menu-box menu-box-default">
-    <div class="qnum">問題3</div>
-    <div class="button-box">
-      <button class="button-default openAnswer">解答する</button>
-      <button class="openStory" disabled>ストーリー</button>
+    <div class="qnum"><span class="ques">問題</span><span class="quesnum">3</span></div>
+    <div class="button-box button-box-before">
+      <div class="box-content">解答する</div>
     </div>
   </div>
   <div class="menu-box menu-box-default">
-    <div class="qnum">問題4</div>
-    <div class="button-box">
-      <button class="button-default openAnswer">解答する</button>
-      <button class="openStory" disabled>ストーリー</button>
+    <div class="qnum"><span class="ques">問題</span><span class="quesnum">4</span></div>
+    <div class="button-box button-box-before">
+      <div class="box-content">解答する</div>
     </div>
   </div>
   <div class="menu-box menu-box-default">
-    <div class="qnum">問題5</div>
-    <div class="button-box">
-      <button class="button-default openAnswer">解答する</button>
-      <button class="openStory" disabled>ストーリー</button>
+    <div class="qnum"><span class="ques">問題</span><span class="quesnum">5</span></div>
+    <div class="button-box button-box-before">
+      <div class="box-content">解答する</div>
     </div>
   </div>
   <div class="menu-box menu-box-default">
-    <div class="qnum">問題6</div>
-    <div class="button-box">
-      <button class="button-default openAnswer">解答する</button>
-      <button class="openStory" disabled>ストーリー</button>
+    <div class="qnum"><span class="ques">問題</span><span class="quesnum">6</span></div>
+    <div class="button-box button-box-before">
+      <div class="box-content">解答する</div>
     </div>
   </div>
   <div class="menu-box menu-box-default">
-    <div class="qnum">問題7</div>
-    <div class="button-box">
-      <button class="button-default openAnswer">解答する</button>
-      <button class="openStory" disabled>ストーリー</button>
+    <div class="qnum"><span class="ques">問題</span><span class="quesnum">7</span></div>
+    <div class="button-box button-box-before">
+      <div class="box-content">解答する</div>
     </div>
   </div>
   <div class="menu-box menu-box-default" style="margin-top: 100px;">
-    <div class="qnum">最終</div>
+    <div class="qnum"><span class="ques">問題</span><span class="quesnum">終</span></div>
     <div class="button-box">
-      <button id="lastbutton" class="button-default openAnswer" disabled>解答する</button>
-      <button class="openStory" disabled>ストーリー</button>
-  </div>
+      <div class="box-content">解答する</div>
+    </div>
   </div>
   <div class="menu-box menu-box-default" style="margin-top: 100px;">
     <div class="qnum">リセット</div>
@@ -83,7 +79,7 @@
 <div id="storyModal" class="modal">
   <span class="close">&times;</span>
   <div class="modal-content">
-      <p style="font-size: 70px; display: none;" id="correct_telling">正解！！</p>
+      <p style="font-size: 70px; display: none;" id="correct_telling">　正解！！</p>
       <p id="storybox" style="font-size: 50px;"></p>
   </div>
 </div>

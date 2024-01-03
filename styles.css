@@ -6,7 +6,14 @@ body {
     height: 100vh;
     margin: 0;
     user-select: none;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    touch-action: pan-x pan-y;
 }
+
+button, input, select, textarea {
+    font-family : inherit;
+    font-size   : 100%;
+  }
 
 /* button要素のデフォルトを無効化 */
 button {
@@ -61,7 +68,7 @@ button:disabled {
 .modal-content {
     background-color: #fefefe;
     margin: 10% auto;
-    padding: 20px;
+    padding: 50px;
     border: 1px solid #888;
     width: 80%;
     min-height: 50%;
@@ -103,31 +110,11 @@ button:disabled {
     margin: 50px;
     padding: 10px;
     font-size: 50px;
-}
-
-/* ボタンの基本スタイル */
-.button-default {
-    background-color: #f94a4ae2;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: #3a544de2;
     color: white;
-}
-
-.button-default:active {
-    background-color: #f94a4a;
-}
-
-.button-default:disabled {
-    background-color: #fe646498;
-    color: #ffc4c4;
-}
-
-/* パスワードが正しい場合のボタンスタイル */
-.button-correct {
-    background-color: #008f0059;
-    color: #008f00a8;
-}
-
-.button-correct:disabled {
-    background-color: #008f0059;
 }
 
 .menu-box-default {
@@ -135,22 +122,25 @@ button:disabled {
     max-width: 800px;
     height: 170px; /* お好みの高さに設定 */
     border-radius: 10px; /* 角の丸み */
+    border: #aaa 2px solid; /* 枠線の設定 */
     margin: 10px; /* 余白 */
-    padding: 20px; /* 余白 */
     display: flex; /* 子要素を横並びにする */
     justify-content: center; /* 子要素を中央に配置する */
     align-items: center; /* 子要素を中央に配置する */
     box-shadow: 0 0 10px #c9c9c9; /* 影の設定 */
-    flex-direction: column;
+    flex-direction: row; /* 子要素を横並びにする */
+    background-image: url(lines.svg);
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: top left;
 }
 
 .menu-box {
-    border: #aaa 1.5px solid; /* 枠線の設定 */
-}
-
-.menu-box-correct {
-    border: #008000 1.5px solid; /* 枠線の設定 */
-    background-color: #d2f2cb93; /* 薄い緑色 */
+    border: #aaa 1.5px solid; /* 枠線の設定 */  
+    background-image: url(lines.svg);
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position: top left;
 }
 
 .wrap{
@@ -163,7 +153,68 @@ button:disabled {
 
 /* 問題番号のスタイル */
 .qnum {
-    font-size: 45px;
+    font-size: 30px;
     font-weight: bold;
-    margin: 15px;
+    height: 80%;
+    width: 35%;
+    margin-left: 10px;
+}
+
+.button-box-before {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 10px 10px 0; /* 角の丸み */
+    background-color: #3a544de2;
+}
+
+
+.button-box {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.ques {
+    font-size: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+.quesnum {
+    font-size: 130px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.box-content {
+    font-size: 50px;
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.box-content-correct {
+    font-size: 50px;
+    color: #000000;
+}
+
+.sumi {
+    display: block;
+    position: absolute;
+    right:-150px;
+    bottom: -40px;
+    width: 150px;
+    transform: rotate(20deg);
+}
+
+#correct_telling {
+    background: linear-gradient(transparent 70%, #ff85ebe2 70%);
 }
