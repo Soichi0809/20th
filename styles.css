@@ -116,7 +116,8 @@ button:disabled {
 }
 
 .button-default:disabled {
-    background-color: #f94a4ae2;
+    background-color: #fe646498;
+    color: #ffc4c4;
 }
 
 /* パスワードが正しい場合のボタンスタイル */
