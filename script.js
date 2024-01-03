@@ -17,7 +17,7 @@ function getgroupnum(){
     var url = location.href;
     if(group_num == null){
         group_num = url.split("=")[1];
-        if(group_num =="1" || group_num =="2" || group_num =="3"){
+        if(Number.isInteger(Number(group_num)) && 0<=group_num && group_num<=29){
             localStorage.setItem("group_num", group_num);
         }else{
             alert("URLが不正です。もう一度QRコードを読み取ってください。");
