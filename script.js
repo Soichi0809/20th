@@ -120,13 +120,24 @@ submitBtn.onclick = function() {
     if(password == answer[now_index]) {
         document.getElementById("storybox").innerHTML = story[now_index];
         answered[now_index] = 1;
-        update(answered);storyModal
+        update(answered);
+        correct_telling.classList.add("correct");
+        correct_telling.classList.remove("incorrect");
         storymodal.classList.add("show");
+        correct_telling.innerHTML = "正解！！";
         correct_telling.style.display = "block";
         storymodal.scrollTop = 0;
         if(answered[0] == 1 && answered[1] == 1 && answered[2] == 1 && answered[3] == 1 && answered[4] == 1 && answered[5] == 1 && answered[6] == 1 && answered[7] == 1) {
             submit_lastans();
         }
+    }else{
+        document.getElementById("storybox").innerHTML = "もう一度考えてみよう！";
+        storymodal.classList.add("show");
+        correct_telling.classList.remove("correct");
+        correct_telling.classList.add("incorrect");
+        correct_telling.innerHTML = "不正解";
+        correct_telling.style.display = "block";
+        storymodal.scrollTop = 0;
     }
     
     document.getElementById("passwordInput").value = ""; // 入力欄をリセット

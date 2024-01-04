@@ -54,7 +54,7 @@ button:disabled {
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
     opacity: 0; /* 最初は透明 */
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); /* アニメーション効果 */
+    transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* アニメーション効果 */
     transform: translateY(-50px); /* 最初は少し上にずらす */
 }
 
@@ -215,6 +215,10 @@ button:disabled {
     transform: rotate(20deg);
 }
 
-#correct_telling {
+.correct {
     background: linear-gradient(transparent 70%, #ff85ebe2 70%);
+}
+
+.incorrect {
+    background: linear-gradient(transparent 70%, #3273fee2 70%);
 }
