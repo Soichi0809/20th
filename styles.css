@@ -143,6 +143,24 @@ button:disabled {
     background-position: top left;
 }
 
+#groupnumbox {
+    width: 95%; /* お好みの幅に設定 */
+    max-width: 800px;
+    height: 170px; /* お好みの高さに設定 */
+    border-bottom: #aaa 2px solid; /* 枠線の設定 */
+    margin: 10px; /* 余白 */
+    display: flex; /* 子要素を横並びにする */
+    justify-content: center; /* 子要素を中央に配置する */
+    align-items: center; /* 子要素を中央に配置する */
+    flex-direction: row; /* 子要素を横並びにする */
+}
+
+#groupnumbox span {
+    font-size: 70px;
+    margin: 0 20px;
+    color: #aaa;
+}
+
 .wrap{
     display: flex;
     flex-flow: column;

@@ -12,17 +12,22 @@ if(localStorage.getItem("alreadysbumit") == null){
     alreadysbumit = false;
 }
 
+var groupnumindi = document.getElementById("groupnumbox").children[0];
+
 function getgroupnum(){
-    group_num = localStorage.getItem("group_num");
     var url = location.href;
-    if(group_num == null){
-        group_num = url.split("=")[1];
-        if(Number.isInteger(Number(group_num)) && 0<=group_num && group_num<=29){
-            localStorage.setItem("group_num", group_num);
+    group_num = url.split("=")[1];
+    if(Number.isInteger(Number(group_num)) && 0<=group_num && group_num<=29){
+        localStorage.setItem("group_num", group_num);
+    }else{
+        if(localStorage.getItem("group_num")!=null){
+            group_num = localStorage.getItem("group_num");
         }else{
             alert("URLが不正です。もう一度QRコードを読み取ってください。");
+            group_num = "ERROR";
         }
     }
+    groupnumindi.innerHTML = group_num+"班";
     return group_num;
 }
 
@@ -202,7 +207,7 @@ function submit_lastans() {
 
 var answer = ["1", "2", "3", "4", "5", "6", "7" , "last"];
 /* 本番用
-var answer = ["えいごか", "いくほうかん", "たてしな", "きょういく", "とうきょうどーむ", "そうがんきょう", "むしとりあみ" , "last"];
+var answer = ["えいごか", "いくほうかん", "たてしな", "きょういく", "とうきょうどーむ", "そうがんきょう", "むしとりあみ" , "じたきょうえい"];
 */
 var story = ["なぞなぞ（謎謎、なぞ）は、問いかけに対して、とんちを利かせた答えを要求する言葉遊びを用いたクイズである。ただし普通のクイズとは違って正解は事実に基づくものではなく、言葉の意味をこじつけた駄洒落・洒落が多い。韻を踏んでいたり、何かに見立てられたりする[1]。転じて、言葉によって婉曲的にわからせる事についてもなぞなぞという。",
 "クイズ（Quiz）の英語での意味は、「（何か）質問すること」と 「知識をテストすること」 と、これらの名詞としての意味であり、日本語では後者の「知識を問う問題」の意味で使われている。出題者が既知の事実に対して質問をし、解答者がその質問に対する正解を答えるという遊び。あるいはその質問のこと。",
