@@ -1,9 +1,11 @@
+/*
 //仮のコード
 var resetbtn = document.getElementById("reset");
 resetbtn.onclick = function() {
     localStorage.clear();
 }
 //仮のコード終わり
+*/
 
 var group_num;
 
