@@ -155,8 +155,26 @@ button:disabled {
     flex-direction: row; /* 子要素を横並びにする */
 }
 
+
 #groupnumbox span {
     font-size: 70px;
+    margin: 0 20px;
+    color: #aaa;
+}
+
+#lastmsg {
+    width: 95%; /* お好みの幅に設定 */
+    max-width: 800px;
+    border-top: #aaa 2px solid; /* 枠線の設定 */
+    margin: 10px; /* 余白 */
+    display: flex; /* 子要素を横並びにする */
+    justify-content: center; /* 子要素を中央に配置する */
+    align-items: center; /* 子要素を中央に配置する */
+    flex-direction: row; /* 子要素を横並びにする */
+}
+
+#lastmsg span {
+    font-size: 30px;
     margin: 0 20px;
     color: #aaa;
 }
@@ -204,7 +222,7 @@ button:disabled {
     vertical-align: top;
 }
 .quesnum {
-    font-size: 130px;
+    font-size: 120px;
     display: inline-block;
     vertical-align: top;
 }
@@ -239,4 +257,8 @@ button:disabled {
 
 .incorrect {
     background: linear-gradient(transparent 70%, #3273fee2 70%);
+}
+
+#storybox span {
+    font-family: 'Zen Old Mincho', serif;
 }
