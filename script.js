@@ -33,6 +33,15 @@ function getgroupnum(){
 
 var answered = [0,0,0,0,0,0,0,0]
 
+var expbtn = document.getElementById("explanation");
+
+expbtn.onclick = function() {
+    if(!comparedate()){
+        url = "./answer.html"
+        window.open(url, '_blank')
+    }
+}
+
 window.onload = function() {
     //answered をjsonから取得
     var oldanswered = JSON.parse(localStorage.getItem("answered"));
@@ -41,9 +50,13 @@ window.onload = function() {
         update(answered);
     }
     getgroupnum();
+    if(comparedate()){
+        expbtn.style.display = "none";
+    }else{
+        expbtn.style.display = "block";
+    }
 }
 const api_url = "https://script.google.com/macros/s/AKfycbwwNAqCvrzX1hcq9QLoZeBkrWo3tgG72oPAG8K1zdUDL6VE_mQCtZgNuKjNW107tEdi/exec";
-
 
 // モーダル要素を取得
 var modal = document.getElementById("myModal");
@@ -206,6 +219,7 @@ function submit_lastans() {
 }
 
 
+
 var correctanswer = ["えいごか", "いくほうかん", "たてしな", "きょういく", "とうきょうどーむ", "そうがんきょう", "むしとりあみ" , "じたきょうえい"];
 
 var story = ["附属小学校の中を探していたら、英語科(えいごか)準備室で先生の手伝いをしている嘉納治五郎を見つけたよ！でも、すぐに逃げられちゃった……次の場所を探しに行こう。",
@@ -216,3 +230,13 @@ var story = ["附属小学校の中を探していたら、英語科(えいご�
 "双眼鏡(そうがんきょう)が売られていた！買って覗いてみると、逃げている嘉納治五郎を見つけたぞ！彼はこちらの存在に気付いていない。捕まえるなら今のうちだ！",
 "嘉納治五郎の自宅で見つけた書きかけの手紙を読んでいたら、隣に虫取り網(むしとりあみ)があった。これで嘉納治五郎を捕まえられるぞ！あと少しだ！",
 "虫取り網で嘉納治五郎を捕まえた！嘉納治五郎は、自分が提唱した理念「精力善用・自他共栄(じたきょうえい)」を皆が忘れているんじゃないかと悲しんで肖像画から飛び出してしまったみたい。でも、皆が理念を再確認したことで、嘉納治五郎は肖像画に帰ってきてくれたよ！<br><br><span>これで謎解きは終了です。結果発表までお待ちください。</span>"];
+
+function comparedate() {
+    var now = new Date();
+    var end = new Date("2024/01/07 19:30:00");
+    if(now <= end){
+        return true; //時間内ならtrue
+    }else{
+        return false; //時間外ならfalse
+    }
+}
